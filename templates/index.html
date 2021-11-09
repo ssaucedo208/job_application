@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Job Search</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="static/css/styles.css">
+
+</head>
+<!--NAVIGATION BAR-->
+
+
+<body class="container">
+
+ <div class="navbar">
+  <a class="active" href="templates/home.html">Home</a>
+  <a href="#contact">Contact</a>
+  <a href="#about">About</a>
+</div>
+
+  <br>
+  <br>
+    <div>
+    <img class= "background" src="{{ url_for('static', filename = 'giphy.gif')}}" alt="">
+  </div>
+  <br>
+  <br>
+
+  <header>
+    <h1>Job Application</h1>
+  </header>
+  <section>
+    <div class="panel panel-primary">
+      <div class="panel body">
+        <form method='POST' job-application="form">
+
+<!-- FULL NAME -->
+          <div class="form-group">
+            <label for="name">Full Name</label>
+            <div class="fullname">
+            <input class="form-control" type="text" id="fname" name="fusername" placeholder="First Name">
+            <input class="form-control" type="text" id="lname" name="lusername" placeholder="Last Name">
+            </div>
+          </div>
+
+<!-- JOB POSITION -->
+          <div class="form-group">
+            <label for="jobInput">Job Position</label>
+            <select id="jobInput" class="form-control" name="jobPosition">
+              <option value="Senior Software Engineer">Senior Software Engineer</option>
+              <option value="Junior Software Engineer">Junior Software Engineer</option>
+              <option value="Intern Software Engineer">Intern Software Engineer</option>
+              <option value="Lead Engineer">Lead Engineer</option>
+              <option value="Database Analyst">Database Analyst</option>
+            </select>
+          </div>
+
+<!-- PHONE NUMBER -->
+          <div class="form-group">
+            <label for="phoneInput">Phone Number</label>
+            <input class="form-control" type="tel" name="phoneNumber" id="phoneInput"
+              placeholder="555-555-5555"pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" required>
+          </div> <!-- form-group -->
+
+<!-- EMAIL ADDRESS -->
+          <div class="form-group">
+            <label for="emailInput">Email</label>
+            <input class="form-control" type="email" name="emailAddress" id="emailInput" required
+              placeholder="picard@gmail.com">
+          </div> <!-- form-group -->
+
+<!-- SSN INFORMATION -->
+          <div class="form-group">
+            <label for="ssnInput">SSN</label>
+            <input class="form-control" type="ssn" name="socialSecurityNumber" id="ssnInput" required
+              placeholder="xxx-xx-xxxx" pattern="[0-9]{3}-[0-9]{2}-[0-9]{4}" required>
+          </div> <!-- form-group -->
+
+<!-- DISTANCE INFORMATION -->
+          <div class="form-group">
+            <label for="distanceInput">Distance (Maximum Mileage)</label>
+            <select id="distanceInput" class="form-control" name="distanceNumber">
+              <option value="Remote Only">Remote Only</option>
+              <option value="10 miles">10 miles</option>
+              <option value="20 miles">20 miles</option>
+              <option value="50 miles">50 miles</option>
+              <option value="Available for any distance">Available for any distance</option>
+            </select>
+          </div>
+
+<!-- ADDRESS INFORMATION -->
+          <br>
+          <br>
+          <div class="form-group">
+            <label for="addressInput">Home Address</label>
+            <input class="form-control" type="text" name="homeAddress" id="homeAddress" required>
+          </div> <!-- form-group -->
+<!-- Country -->
+          <div class="form-group">
+            <label for="countryInput">Country</label>
+            <input class="form-control" type="text" name="userCountry" id="userCountry" required>
+          </div> <!-- form-group -->
+  
+<!-- STATE  -->
+          <div class="form-group">
+            <label for="stateInput">State</label>
+            <input class="form-control" type="text" name="userState" id="userState" required>
+          </div> <!-- form-group -->
+
+<!-- CITY INFORMATION -->
+          <div class="form-group">
+            <label for="cityInput">City</label>
+            <input class="form-control" type="text" name="userCity" id="userCity" required>
+          </div> <!-- form-group -->
+
+<!-- ZIP NUMBER -->
+          <div class="form-group">
+            <label for="zipInput">Zip Code</label>
+            <input class="form-control" type="text" name="userZip" id="userZip" pattern="[0-9]{5}" required>
+          </div> <!-- form-group -->
+          <br>
+
+<!-- SUBMIT/RESET BUTTONS -->
+          <button type="submit" class="button1">Submit </button>
+          <button type="reset" class="button2">Reset</button>
+        </form>
+      </div> <!-- panel body -->
+    </div> <!-- panel panel-primary -->
+
+    <br>
+    <br>
+      <div>
+        <h2>Sponsors</h2>
+        <img class="sponsors" src="{{ url_for('static', filename = 'sponsors.jpg')}}" alt="">
+      </div>
+
+  </section>
+
+</body>
+</body>
+
+</html>
