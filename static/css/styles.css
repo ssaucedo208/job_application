@@ -31,25 +31,6 @@ body {
   font-weight: bold;
 }
 
-.navbar a {
-  float: left;
-  color: #f2f2f2;
-  text-align:center;
-  padding: 10px 10px;
-  text-decoration: none;
-  font-size: 17px;
-}
-
-.navbar a:hover{
-  background-color: #ddd;
-  color: black;
-}
-
-.navbar a.active{
-  background-color: #949494;
-  color:white;
-}
-
 .sponsors {
   background-image: url("img/sponsors.jpg");
   display: block;
@@ -68,7 +49,7 @@ body {
 /* FULL NAME-Adjusting text box size
  * 'fname' and 'lname' are the id's given in html file */
  #fname,#lname{
-  width: 640px;
+  width: 500px;
 } 
 
 span{
