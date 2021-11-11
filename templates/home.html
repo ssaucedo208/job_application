@@ -2,27 +2,134 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Job Search</title>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0/jquery.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js"></script>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.css" />
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css">
-  <link rel="stylesheet" href="static/css/styles.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="static/css/styles.css">
 
 </head>
+<svg viewbox="0 0 100 20">
+    <defs>
+        <linearGradient id="gradient">
+            <stop color="#000" />
+        </linearGradient>
+        <pattern id="wave" x="0" y="-0.5" width="100%" height="100%" patternUnits="userSpaceOnUse">
+            <path id="wavePath" d="M-40 9 Q-30 7 -20 9 T0 9 T20 9 T40 9 T60 9 T80 9 T100 9 T120 9 V20 H-40z"
+                mask="url(#mask)" fill="url(#gradient)">
+                <animateTransform attributeName="transform" begin="0s" dur="1.5s" type="translate" from="0,0" to="40,0"
+                    repeatCount="indefinite" />
+            </path>
+        </pattern>
+    </defs>
+    <text text-anchor="middle" x="50" y="15" font-size="17" fill="black" fill-opacity="0.1">MAST</text>
+    <text text-anchor="middle" x="50" y="15" font-size="17" fill="url(#wave)" fill-opacity="1">MAST</text>
+</svg>
 
-<h1>Welcome to Job Search!</h1>
 <body>
-    <div>
-        <p align="center">
-            <a href= "{{ url_for('apply') }}">
-                <button class ="button" type="button1" onclick="redirect(url_for('apply'))" >
-                    <img src="{{url_for('static', filename='apply-now.png')}}" alt="">
-                </button>
-            </a>
-        </p>
+
+    <div class="fontIndex">
+        <div class="home">
+            <br>
+            <h1> Welcome To The Most Trusted Job Application Across The World!</h1>
+            <br>
+            <h2> Software Engineering Job Offers Exclusive To You ONLY!!!</h2>
+            <h3> Make up to $350,000/YR PLUS Benefits and Bonuses!!</h3>
+            <br>
+            <div class="title">
+                <h4> <u>Software Engineer Job Responsibilities:</u></h4>
+            </div>
+            <div class="home2">
+                <ul>
+                    <li>Develops information systems by designing, developing, and installing software solutions.</li>
+                    <li>Determines operational feasibility by evaluating analysis, problem definition, requirements,
+                        solution development, and proposed solutions.</li>
+                    <li>Develops software solutions by studying information needs, conferring with users, and studying
+                        systems flow, data usage, and work processes.</li>
+                    <li>Investigates problem areas.</li>
+                    <li>Follows the software development lifecycle.</li>
+                    <li>Documents and demonstrates solutions by developing documentation, flowcharts, layouts, diagrams,
+                        charts, code comments and clear code.</li>
+                    <li>Prepares and installs solutions by determining and designing system specifications, standards,
+                        and
+                        programming.</li>
+                    <li>Improves operations by conducting systems analysis and recommending changes in policies and
+                        procedures.</li>
+                    <li>Obtains and licenses software by obtaining required information from vendors, recommending
+                        purchases, and testing and approving products.</li>
+                    <li>Protects operations by keeping information confidential.</li>
+                    <li>Provides information by collecting, analyzing, and summarizing development and service issues.
+                    </li>
+                    <li>Accomplishes engineering and organization mission by completing related results as needed.</li>
+                </ul>
+            </div>
+            <br>
+            <div class="title">
+                <h4><u>Education, Experience, and Licensing Requirements:</u></h4>
+            </div>
+            <div class="home2">
+                <ul>
+                    <li>Bachelor’s and/or Master’s degree in Computer Science, Computer Engineering or related technical
+                        discipline</li>
+                    <li>5+ years of professional software development experience</li>
+                    <li>Proficiency in Java or C++, and object-oriented design skills</li>
+                    <li>Application architecture and design patterns</li>
+                    <li>Experience serving as technical lead throughout the full software development lifecycle, from
+                        conception, architecture definition, detailed design, scoping, planning, implementation, testing
+                        to documentation, delivery and maintenance is preferred</li>
+                    <li>Knowledge of professional software engineering and best practices for the full software
+                        development life cycle, including coding standards, code reviews, source control management,
+                        build processes, testing, and operations</li>
+                    <li>Experience in development of distributed/scalable systems and high-volume transaction
+                        applications</li>
+                </ul>
+            </div>
+            <br>
+            <h4> LIMITED TIME ONLY! </h4>
+            <p id="demo"></p>
+            <script>
+                // Set the date we're counting down to
+                var countDownDate = new Date("Nov 13, 2021 18:00:00").getTime();
+
+                // Update the count down every 1 second
+                var x = setInterval(function () {
+
+                    // Get today's date and time
+                    var now = new Date().getTime();
+
+                    // Find the distance between now and the count down date
+                    var distance = countDownDate - now;
+
+                    // Time calculations for days, hours, minutes and seconds
+                    var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+                    var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                    var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                    var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+                    // Output the result in an element with id="demo"
+                    document.getElementById("demo").innerHTML = days + "d " + hours + "h " +
+                        minutes + "m " + seconds + "s ";
+
+                    // If the count down is over, write some text 
+                    if (distance < 0) {
+                        clearInterval(x);
+                        document.getElementById("demo").innerHTML = "EXPIRED";
+                    }
+                }, 1000);
+            </script>
+            <div class="apply">
+                <p>
+                    <a href="{{ url_for('apply') }}">
+                        <button class="button" type="apply" onclick="redirect(url_for('apply'))"> Apply Now</button>
+                    </a>
+                </p>
+            </div>
+        </div>
     </div>
 </body>
+
+</html>

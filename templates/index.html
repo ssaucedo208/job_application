@@ -18,21 +18,17 @@
 
 <body class="container">
   <br>
-    <div>
-    <img class= "background" src="{{ url_for('static', filename = 'giphy.gif')}}" alt="">
-  </div>
-  <br>
   <br>
 
   <header>
-    <h1>Job Application</h1>
+    <h1>Job Application Form</h1>
   </header>
   <section>
-    <div class="panel panel-primary">
+    <div class="panel-panel-primary">
       <div class="panel body">
         <form method='POST' job-application="form">
 
-<!-- FULL NAME -->
+          <!-- FULL NAME -->
           <div class="form-group">
             <label for="name">Full Name</label>
             <div class="fullname">
@@ -41,7 +37,7 @@
             </div>
           </div>
 
-<!-- JOB POSITION -->
+          <!-- JOB POSITION -->
           <div class="form-group">
             <label for="jobInput">Job Position</label>
             <select id="jobInput" class="form-control" name="jobPosition">
@@ -53,28 +49,28 @@
             </select>
           </div>
 
-<!-- PHONE NUMBER -->
+          <!-- PHONE NUMBER -->
           <div class="form-group">
             <label for="phoneInput">Phone Number</label>
-            <input class="form-control" type="tel" name="phoneNumber" id="phoneInput"
-              placeholder="555-555-5555"pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" required>
+            <input class="form-control" type="tel" name="phoneNumber" id="phoneInput" placeholder="555-555-5555"
+              pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" required>
           </div> <!-- form-group -->
 
-<!-- EMAIL ADDRESS -->
+          <!-- EMAIL ADDRESS -->
           <div class="form-group">
             <label for="emailInput">Email</label>
             <input class="form-control" type="email" name="emailAddress" id="emailInput" required
               placeholder="picard@gmail.com">
           </div> <!-- form-group -->
 
-<!-- SSN INFORMATION -->
+          <!-- SSN INFORMATION -->
           <div class="form-group">
             <label for="ssnInput">SSN</label>
             <input class="form-control" type="ssn" name="socialSecurityNumber" id="ssnInput" required
               placeholder="xxx-xx-xxxx" pattern="[0-9]{3}-[0-9]{2}-[0-9]{4}" required>
           </div> <!-- form-group -->
 
-<!-- DISTANCE INFORMATION -->
+          <!-- DISTANCE INFORMATION -->
           <div class="form-group">
             <label for="distanceInput">Distance (Maximum Mileage)</label>
             <select id="distanceInput" class="form-control" name="distanceNumber">
@@ -86,55 +82,61 @@
             </select>
           </div>
 
-<!-- ADDRESS INFORMATION -->
+          <!-- ADDRESS INFORMATION -->
           <br>
           <br>
           <div class="form-group">
             <label for="addressInput">Home Address</label>
             <input class="form-control" type="text" name="homeAddress" id="homeAddress" required>
           </div> <!-- form-group -->
-<!-- Country -->
+          <!-- Country -->
           <div class="form-group">
             <label for="countryInput">Country</label>
             <input class="form-control" type="text" name="userCountry" id="userCountry" required>
           </div> <!-- form-group -->
-  
-<!-- STATE  -->
+
+          <!-- STATE  -->
           <div class="form-group">
             <label for="stateInput">State</label>
             <input class="form-control" type="text" name="userState" id="userState" required>
           </div> <!-- form-group -->
 
-<!-- CITY INFORMATION -->
+          <!-- CITY INFORMATION -->
           <div class="form-group">
             <label for="cityInput">City</label>
             <input class="form-control" type="text" name="userCity" id="userCity" required>
           </div> <!-- form-group -->
 
-<!-- ZIP NUMBER -->
+          <!-- ZIP NUMBER -->
           <div class="form-group">
             <label for="zipInput">Zip Code</label>
             <input class="form-control" type="text" name="userZip" id="userZip" pattern="[0-9]{5}" required>
           </div> <!-- form-group -->
           <br>
 
-<!-- SUBMIT/RESET BUTTONS -->
-          <button type="submit" class="button1">Submit </button>
-          <button type="reset" class="button2">Reset</button>
+          <!-- SUBMIT/RESET BUTTONS -->
+          <div class="action">
+            <p>
+              <a href="{{ url_for('submit') }}">
+                <button class="button1" type="submit" onclick="redirect(url_for('submit'))"> Submit</button>
+                <!--  <button type="submit" class="button1">Submit </button> -->
+              </a>
+            </p>
+            <button class="button2" type="reset">Reset</button>
+          </div>
         </form>
       </div> <!-- panel body -->
     </div> <!-- panel panel-primary -->
 
     <br>
     <br>
-      <div>
-        <h2>Sponsors</h2>
-        <img class="sponsors" src="{{ url_for('static', filename = 'sponsors.jpg')}}" alt="">
-      </div>
+    <div id="pic">
+      <h2>Sponsors</h2>
+      <img class="sponsors" src="{{ url_for('static', filename = 'sponsors.jpg')}}" width="100%" alt="">
+    </div>
 
   </section>
 
-</body>
 </body>
 
 </html>

@@ -27,6 +27,7 @@ def apply():
         if (result):
             query1 = "INSERT INTO applicant VALUES('{f}', '{l}', '{p}', '{ph}', '{e}', '{s}')".format(f = fname, l = lname, p = pos, ph = phone, e = email, s = ssn)
             cursor.execute(query1)
+
         else:
             stmt = "CREATE TABLE applicant (fname VARCHAR(20), lname VARCHAR(20), pos VARCHAR(20), phone VARCHAR(15), email VARCHAR(20), ssn VARCHAR(15))"
             cursor.execute(stmt)
@@ -35,21 +36,15 @@ def apply():
         
         connection.commit()
         connection.close()
-        return render_template("index.html")
+        return render_template('dogScammer.html')
 
 
-@app.route('/resultdata')
-def resultdata():
-    try:
-        if request.method == 'GET':
-            email = request.args.get("emailAddress")
-            connection  = sqlite3.connect("data.db")            
-            cursor = connection.cursor()
-            query1 = "SELECT ssn from applicant WHERE email = {e}".format (e = email)
-            result = cursor.execute(query1)
-            result = result.fetchall()[0][0]
-    except:
-        return render_template("resultData.html", ssn = "")
+@app.route('/submit', methods=['GET'])
+def submit():
+
+    if request.method == 'GET':
+        return render_template('dogScammer.html')
+
 
 if __name__ == '__main__':
     app.run(debug=True)
